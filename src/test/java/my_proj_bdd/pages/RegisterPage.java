@@ -1,6 +1,6 @@
 package my_proj_bdd.pages;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

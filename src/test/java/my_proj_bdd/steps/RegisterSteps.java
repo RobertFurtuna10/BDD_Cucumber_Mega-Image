@@ -41,6 +41,7 @@ public class RegisterSteps extends DriverManager {
     @When("I click on 'Creeaza un cont nou' button")
     public void clickCreeazaContNou() {
         registerPage.clickCreeazaunContNou();
+        registerPage.clickCreeazaunContNou();
     }
 
     @Then("I validate error messages for password and terms checkbox")

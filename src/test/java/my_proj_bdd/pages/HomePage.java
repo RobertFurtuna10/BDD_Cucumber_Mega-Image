@@ -34,7 +34,7 @@ public class HomePage extends BasePage {
     @FindBy(css = ".sc-dyjemn-11")
     private WebElement alegeMaiTarziuButton;
 
-    @FindBy(css = ".sc-xnh8i-16")
+    @FindBy(css = ".ka-dZtl")
     private WebElement completeBasketXButton;
 
 
