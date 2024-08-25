@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 public class SearchPage extends BasePage {
 
     private WebDriverWait wait;
@@ -30,6 +32,12 @@ public class SearchPage extends BasePage {
     @FindBy(css = ".sc-jtuh2d-8 div")
     private WebElement selectFirstElemFromDroptown;
 
+    @FindBy(css = "[title='Branduri proprii']")
+    private WebElement filterBrand;
+
+    @FindBy(css = "[data-testid='product-block-name-link']")
+    private List<WebElement> productNameElements;
+
     // Actions
     public void fillSearchInput(String search) {
         // Așteaptă ca elementul să fie vizibil și interactiv
@@ -44,6 +52,10 @@ public class SearchPage extends BasePage {
 
     public void clickFirstElemFromDroptown() {
         selectFirstElemFromDroptown.click();
+    }
+
+    public void clickFilterBrand() {
+        filterBrand.click();
     }
 
     // Validations
@@ -67,8 +79,15 @@ public class SearchPage extends BasePage {
         Assert.assertTrue("No results message is not visible.", noResults.isDisplayed());
     }
 
-//    public void validateURLContainsSearchTerm(String searchTerm) {
-//        // Wait until the URL contains the search term or a timeout occurs
-//        WebDriverWait wait = new WebDriverWait(driver, 10); // waits up to 10 seconds
-//        wait.until(ExpectedConditions.urlContains(searchTerm));
+    public void validateAllProductsAreGusturiRomanestiBrand() {
+        wait.until(ExpectedConditions.visibilityOfAllElements(productNameElements));
+
+        for (WebElement productNameElement : productNameElements) {
+            String productNameText = productNameElement.getText().trim();
+
+            // Check if the product name starts with "Gusturi Românești"
+            Assert.assertTrue("Expected product name to start with 'Gusturi Românești', but was: " + productNameText,
+                    productNameText.toLowerCase().startsWith("gusturi romanesti"));
+        }
+    }
 }

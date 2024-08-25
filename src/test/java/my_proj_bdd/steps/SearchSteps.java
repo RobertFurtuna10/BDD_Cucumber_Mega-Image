@@ -38,6 +38,27 @@ public class SearchSteps extends DriverManager {
     public void i_validate_product_page(){
         searchPage.validateSearchResultsAreVisible();
     }
+
+    @Then("I apply the filter 'branduri proprii'")
+    public void i_click_brand_filter(){
+        searchPage.clickFilterBrand();
+    }
+
+    @Then("I validate the search results page displays only 'Gusturi romanesti' brand products")
+    public void i_validate_gusturi_romanesti_brand_products() {
+        searchPage.validateAllProductsAreGusturiRomanestiBrand();
+    }
+
+    @Then("I validate the search results page displays products related to 'ciocolata' regardless of case")
+    public void i_validate_ciocolata_product_page(){
+        searchPage.validateSearchResultsAreVisible();
+    }
+
+    @When("I press Enter in the search bar without entering any text")
+    public void i_press_enter_in_the_search_bar_without_text() {
+        searchPage.pressEnterInSearchBar();
+    }
+
 }
 
 
