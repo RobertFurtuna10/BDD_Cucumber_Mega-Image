@@ -3,6 +3,72 @@
 ## Project Overview
 This project uses Selenium WebDriver for automated testing of the Mega Image website. It employs Cucumber for behavior-driven development (BDD) and follows a Page Object Model (POM) design pattern. The tests cover various functionalities, including home page interactions, user registration, search operations, and shopping cart management.
 
+# Project Dependencies and Requirements
+
+## Dependencies
+
+This project uses Maven for dependency management. The following dependencies and their versions are specified in the `pom.xml` file:
+
+- **Cucumber Java**: `4.2.6`
+  - For writing and running Cucumber tests in Java.
+- **Cucumber JUnit**: `4.2.6`
+  - For integrating Cucumber with JUnit.
+- **JUnit**: `4.12`
+  - For assertions and test framework.
+- **Appium Java Client**: `4.1.2`
+  - For mobile application testing (if applicable).
+- **WebDriverManager**: `5.9.1`
+  - For managing WebDriver binaries.
+
+## Project Requirements
+
+To set up and run this project, ensure you have the following installed:
+
+1. **Java Development Kit (JDK)**:
+   - Java 1.8 or later.
+
+2. **Maven**:
+   - Follow the [Maven installation guide](https://maven.apache.org/install.html) if Maven is not installed.
+
+3. **WebDriver Binaries**:
+   - Ensure you have the necessary WebDriver binaries for your browser (e.g., ChromeDriver for Chrome). These will be managed automatically by WebDriverManager.
+
+## Installation Instructions
+
+1. **Install Java**:
+   - Download and install the JDK from the [official Java website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) or use an open-source distribution like [AdoptOpenJDK](https://adoptium.net/).
+
+2. **Install Maven**:
+   - Download and install Maven from the [Apache Maven website](https://maven.apache.org/download.cgi).
+   - Follow the installation instructions for your operating system.
+
+3. **Clone the Repository**:
+   - Clone the repository containing the project files:
+     ```bash
+     git clone https://github.com/RobertFurtuna10/BDD_Cucumber_Mega-Image.git
+     ```
+
+4. **Navigate to Project Directory**:
+   - Open Terminal or Command Prompt.
+   - Change to the directory where your `pom.xml` file is located:
+     ```bash
+     cd path/to/project-directory
+     ```
+
+5. **Install Dependencies**:
+   - Run Maven to download and install the required dependencies:
+     ```bash
+     mvn install
+     ```
+
+6. **Run Tests**:
+   - Execute the tests using Maven:
+     ```bash
+     mvn test
+     ```
+
+This will build the project, install the necessary dependencies, and run the feature files using the specified WebDriver.
+
 ## Project Structure
 
 ### Pages
@@ -92,70 +158,6 @@ Contains the WebDriver manager for initializing and managing the WebDriver insta
 - **@When("I click 'Goleste cosul' button")**: Clicks the 'Goleste cosul' button.
 - **@When("I click on confirm empty basket button")**: Clicks the confirm empty basket button.
 
-# Project Dependencies and Requirements
 
-## Dependencies
-
-This project uses Maven for dependency management. The following dependencies and their versions are specified in the `pom.xml` file:
-
-- **Cucumber Java**: `4.2.6`
-  - For writing and running Cucumber tests in Java.
-- **Cucumber JUnit**: `4.2.6`
-  - For integrating Cucumber with JUnit.
-- **JUnit**: `4.12`
-  - For assertions and test framework.
-- **Appium Java Client**: `4.1.2`
-  - For mobile application testing (if applicable).
-- **WebDriverManager**: `5.9.1`
-  - For managing WebDriver binaries.
-
-## Project Requirements
-
-To set up and run this project, ensure you have the following installed:
-
-1. **Java Development Kit (JDK)**:
-   - Java 1.8 or later.
-
-2. **Maven**:
-   - Follow the [Maven installation guide](https://maven.apache.org/install.html) if Maven is not installed.
-
-3. **WebDriver Binaries**:
-   - Ensure you have the necessary WebDriver binaries for your browser (e.g., ChromeDriver for Chrome). These will be managed automatically by WebDriverManager.
-
-## Installation Instructions
-
-1. **Install Java**:
-   - Download and install the JDK from the [official Java website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) or use an open-source distribution like [AdoptOpenJDK](https://adoptium.net/).
-
-2. **Install Maven**:
-   - Download and install Maven from the [Apache Maven website](https://maven.apache.org/download.cgi).
-   - Follow the installation instructions for your operating system.
-
-3. **Clone the Repository**:
-   - Clone the repository containing the project files:
-     ```bash
-     git clone https://github.com/RobertFurtuna10/BDD_Cucumber_Mega-Image.git
-     ```
-
-4. **Navigate to Project Directory**:
-   - Open Terminal or Command Prompt.
-   - Change to the directory where your `pom.xml` file is located:
-     ```bash
-     cd path/to/project-directory
-     ```
-
-5. **Install Dependencies**:
-   - Run Maven to download and install the required dependencies:
-     ```bash
-     mvn install
-     ```
-
-6. **Run Tests**:
-   - Execute the tests using Maven:
-     ```bash
-     mvn test
-     ```
-
-This will build the project, install the necessary dependencies, and run the feature files using the specified WebDriver.
 
 
