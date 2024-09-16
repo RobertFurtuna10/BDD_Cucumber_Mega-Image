@@ -8,10 +8,39 @@ import my_proj_bdd.pages.RegisterPage;
 public class RegisterSteps extends DriverManager {
     RegisterPage registerPage = new RegisterPage(driver);
 
-    @When("I click on 'Continua' button")
+    @When("I click twice on 'Continua' button")
     public void clickContinue() {
+        registerPage.clickContinueButton(); // First click
+        try {
+            Thread.sleep(1000); // Wait for 1 second
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        registerPage.clickContinueButton(); // Second click
+    }
+
+    @When("I click three times on 'Continua' button")
+    public void click3Continue() {
+        registerPage.clickContinueButton(); // First click
+        try {
+            Thread.sleep(1000); // Wait for 1 second
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        registerPage.clickContinueButton(); // Second click
+        try {
+            Thread.sleep(1000); // Wait for 1 second
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        registerPage.clickContinueButton(); // Third click
+    }
+
+    @When("I click on 'Continua' button")
+    public void clickTwiceContinue() {
         registerPage.clickContinueButton();
     }
+
 
     @Then("I validate error message: (.*)$")
     public void validateMsg(String expectedMsg) {

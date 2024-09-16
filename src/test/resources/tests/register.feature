@@ -22,6 +22,8 @@ Feature: Register feature
   Scenario Outline: Positive: Valid phone/email
     When I fill email/phone input: <email_phone>
     When I click on 'Continua' button
+#    When I click twice on 'Continua' button
+#    When I click three times on 'Continua' button
     When I click on 'Creeaza un cont nou' pop up button
     Then I validate register header is displayed
 
@@ -39,6 +41,7 @@ Feature: Register feature
   Scenario: Register with wrong password
     When I fill email/phone input: email1234@email.com
     When I click on 'Continua' button
+#    When I click twice on 'Continua' button
     When I click on 'Creeaza un cont nou' pop up button
     When I fill password input: passw123
     When I click on 'Creeaza un cont nou' button

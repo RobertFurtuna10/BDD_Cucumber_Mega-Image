@@ -23,6 +23,7 @@ Feature: Shopping cart feature
      When I click on basket picture button with index: 1
      When I click on basket picture button with index: 0
      When I click on 'Alege mai tarziu' button
+#     When I click on x button in 'Completeaza-ti cosul cu aceste produse' pop-up
      When I click 'Shopping Cart' button
      Then I validate all products are in the cart
 
@@ -39,7 +40,7 @@ Feature: Shopping cart feature
   Scenario: I can increase the quantity of a product in the shopping cart
     When I click on basket picture button with index: 2
     When I click on 'Alege mai tarziu' button
-    When I click on x button in 'Completeaza-ti cosul cu aceste produse' pop-up
+#    When I click on x button in 'Completeaza-ti cosul cu aceste produse' pop-up
     When I click 'Shopping Cart' button
     When I click twice on increase quantity button
     Then I validate the product quantity is 3
