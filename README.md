@@ -91,14 +91,127 @@ Contains the WebDriver manager for initializing and managing the WebDriver insta
 - **@Then("I validate the product quantity is {int}")**: Validates the product quantity.
 - **@When("I click 'Goleste cosul' button")**: Clicks the 'Goleste cosul' button.
 - **@When("I click on confirm empty basket button")**: Clicks the confirm empty basket button.
-# How to Run the Tests
 
-## Set up the Environment
+# Set up the Environment
+# Installing Java and Maven
 
-1. Ensure you have Java and Maven installed.
-2. Install the required WebDriver binaries for your browser (e.g., ChromeDriver for Chrome).
+## Installing Java
 
-## Build the Project
+### On Windows
 
-```bash
-mvn clean install
+1. **Download the JDK:**
+   - Go to the [AdoptOpenJDK](https://adoptium.net/).
+   - Download the installer for Windows.
+
+2. **Install the JDK:**
+   - Run the downloaded installer and follow the installation instructions.
+   - During installation, take note of the installation directory (e.g., `C:\Program Files\Java\jdk-<version>`).
+
+3. **Set Up Environment Variables:**
+   - Open the Start Menu, search for "Environment Variables", and select "Edit the system environment variables".
+   - Click on "Environment Variables".
+   - In the "System variables" section, click "New" and add the following variables:
+     - `JAVA_HOME` with the path to your JDK installation (e.g., `C:\Program Files\Java\jdk-<version>`).
+     - Update the `Path` variable and add `%JAVA_HOME%\bin`.
+
+4. **Verify Installation:**
+   - Open Command Prompt and type:
+     ```bash
+     java -version
+     ```
+     and
+     ```bash
+     javac -version
+     ```
+
+### On macOS
+
+1. **Install via Homebrew:**
+   - Open Terminal and install Homebrew if you haven’t already by running:
+     ```bash
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     ```
+   - Install Java using Homebrew:
+     ```bash
+     brew install openjdk
+     ```
+
+2. **Set Up Environment Variables:**
+   - Add the following to your `.zshrc` or `.bash_profile` file:
+     ```bash
+     export JAVA_HOME=$(/usr/libexec/java_home)
+     export PATH=$JAVA_HOME/bin:$PATH
+     ```
+
+3. **Verify Installation:**
+   - In Terminal, type:
+     ```bash
+     java -version
+     ```
+     and
+     ```bash
+     javac -version
+     ```
+
+### On Linux
+
+1. **Install via Package Manager:**
+   - For Ubuntu/Debian-based systems:
+     ```bash
+     sudo apt update
+     sudo apt install openjdk-11-jdk
+     ```
+
+   - For Red Hat/Fedora-based systems:
+     ```bash
+     sudo dnf install java-11-openjdk-devel
+     ```
+
+2. **Verify Installation:**
+   - In Terminal, type:
+     ```bash
+     java -version
+     ```
+     and
+     ```bash
+     javac -version
+     ```
+
+## Installing Maven
+
+### On Windows, macOS, and Linux
+
+1. **Download Maven:**
+   - Go to the [Apache Maven Downloads page](https://maven.apache.org/download.cgi).
+   - Download the binary zip archive (e.g., `apache-maven-<version>-bin.zip`) for Windows or the tar.gz archive for macOS/Linux.
+
+2. **Install Maven:**
+   - **Windows:**
+     - Extract the zip file to a directory (e.g., `C:\Program Files\Apache\maven`).
+     - Add a `MAVEN_HOME` environment variable with the path to the Maven directory.
+     - Update the `Path` variable to include `%MAVEN_HOME%\bin`.
+
+   - **macOS/Linux:**
+     - Extract the tar.gz file:
+       ```bash
+       tar xzvf apache-maven-<version>-bin.tar.gz
+       ```
+     - Move the extracted directory to `/usr/local/apache-maven`:
+       ```bash
+       sudo mv apache-maven-<version> /usr/local/apache-maven
+       ```
+     - Add Maven to your `PATH`:
+       ```bash
+       export M2_HOME=/usr/local/apache-maven/apache-maven-<version>
+       export PATH=$M2_HOME/bin:$PATH
+       ```
+
+3. **Verify Installation:**
+   - In Terminal or Command Prompt, type:
+     ```bash
+     mvn -version
+     ```
+
+This should display the installed Maven version along with Java details.
+
+
