@@ -134,7 +134,7 @@ To set up and run this project, ensure you have the following installed:
 3. **Clone the Repository**:
    - Clone the repository containing the project files:
      ```bash
-     git clone <repository-url>
+     git clone https://github.com/RobertFurtuna10/BDD_Cucumber_Mega-Image.git
      ```
 
 4. **Navigate to Project Directory**:
