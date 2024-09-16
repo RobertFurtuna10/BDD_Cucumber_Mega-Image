@@ -1,4 +1,4 @@
-# Mega Image Automation Testing
+# Mega Image - Java BDD Automation Testing with Cucumber
 
 ## Project Overview
 This project uses Selenium WebDriver for automated testing of the Mega Image website. It employs Cucumber for behavior-driven development (BDD) and follows a Page Object Model (POM) design pattern. The tests cover various functionalities, including home page interactions, user registration, search operations, and shopping cart management.
