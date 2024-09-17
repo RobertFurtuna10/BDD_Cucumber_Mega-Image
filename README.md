@@ -1,26 +1,29 @@
 # Mega Image - Java BDD Automation Testing with Cucumber
 
 ## Project Overview
-This project uses Selenium WebDriver for automated testing of the Mega Image website. It employs Cucumber for behavior-driven development (BDD) and follows a Page Object Model (POM) design pattern. The tests cover various functionalities, including home page interactions, user registration, search operations, and shopping cart management.
 
-# Project Dependencies and Requirements
+This project utilizes **Selenium WebDriver** for automated testing of the Mega Image website, implementing **Cucumber** for behavior-driven development (BDD). It follows a **Page Object Model (POM)** design pattern to manage interactions with different pages efficiently. The tests cover a wide range of functionalities, including home page interactions, user registration, product search operations, and shopping cart management.
 
-## Dependencies
+By leveraging BDD, this project enhances communication between technical and non-technical stakeholders, making test scenarios understandable for all parties involved.
 
-This project uses Maven for dependency management. The following dependencies and their versions are specified in the `pom.xml` file:
+## Project Dependencies and Requirements
+
+### Dependencies
+
+This project uses **Maven** for dependency management, and the following key dependencies are specified in the `pom.xml` file:
 
 - **Cucumber Java**: `4.2.6`
   - For writing and running Cucumber tests in Java.
 - **Cucumber JUnit**: `4.2.6`
-  - For integrating Cucumber with JUnit.
+  - For integrating Cucumber with JUnit for test execution.
 - **JUnit**: `4.12`
-  - For assertions and test framework.
-- **Appium Java Client**: `4.1.2`
-  - For mobile application testing (if applicable).
+  - For assertions and managing test cases.
+- **Selenium WebDriver**: To interact with web elements on the Mega Image website.
 - **WebDriverManager**: `5.9.1`
-  - For managing WebDriver binaries.
+  - Automatically manages WebDriver binaries for different browsers.
 
-## Project Requirements
+
+### Project Requirements
 
 To set up and run this project, ensure you have the following installed:
 
@@ -28,12 +31,14 @@ To set up and run this project, ensure you have the following installed:
    - Java 1.8 or later.
 
 2. **Maven**:
-   - Follow the [Maven installation guide](https://maven.apache.org/install.html) if Maven is not installed.
+   - [Maven installation guide](https://maven.apache.org/install.html) for assistance.
 
 3. **WebDriver Binaries**:
-   - Ensure you have the necessary WebDriver binaries for your browser (e.g., ChromeDriver for Chrome). These will be managed automatically by WebDriverManager.
+   - WebDriver binaries (e.g., ChromeDriver) will be automatically managed by **WebDriverManager**.
 
 ## Installation Instructions
+
+Follow the steps below to set up and run the project:
 
 1. **Install Java**:
    - Download and install the JDK from the [official Java website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) or use an open-source distribution like [AdoptOpenJDK](https://adoptium.net/).
@@ -43,13 +48,12 @@ To set up and run this project, ensure you have the following installed:
    - Follow the installation instructions for your operating system.
 
 3. **Clone the Repository**:
-   - Clone the repository containing the project files:
+   - Open your terminal or command prompt and run:
      ```bash
      git clone https://github.com/RobertFurtuna10/BDD_Cucumber_Mega-Image.git
      ```
 
 4. **Navigate to Project Directory**:
-   - Open Terminal or Command Prompt.
    - Change to the directory where your `pom.xml` file is located:
      ```bash
      cd path/to/project-directory
@@ -67,29 +71,32 @@ To set up and run this project, ensure you have the following installed:
      mvn test
      ```
 
-This will build the project, install the necessary dependencies, and run the feature files using the specified WebDriver.
+This will build the project, install the necessary dependencies, and execute the feature files with the specified WebDriver.
 
 ## Project Structure
 
 ### Pages
-Contains the Page Object Model classes representing different pages of the Mega Image website.
 
-- **BasePage.java**: Base class for all page objects providing common methods and WebDriver initialization.
-- **HomePage.java**: Page object for the home page with methods for interacting with page elements and performing actions.
-- **RegisterPage.java**: Page object for the registration page with methods for filling out registration forms and validating error messages.
-- **SearchPage.java**: Page object for the search page with methods for performing searches and validating results.
-- **ShoppingCartPage.java**: Page object for the shopping cart page with methods for managing cart items and validating cart content.
+This folder contains the **Page Object Model (POM)** classes representing different pages of the Mega Image website.
+
+- **BasePage.java**: Base class providing common methods and WebDriver initialization for all page objects.
+- **HomePage.java**: Page object for the home page with methods for interacting with elements like the cookie banner and navigation buttons.
+- **RegisterPage.java**: Contains methods for filling out registration forms and validating error messages.
+- **SearchPage.java**: Handles search operations, including applying filters and validating search results.
+- **ShoppingCartPage.java**: Manages actions related to the shopping cart, such as adding/removing items and validating contents.
 
 ### Steps
-Contains step definition classes corresponding to the Gherkin steps defined in the feature files.
 
-- **HomeSteps.java**: Step definitions for actions and validations related to the home page.
-- **RegisterSteps.java**: Step definitions for user registration actions and validations.
-- **SearchSteps.java**: Step definitions for search operations and result validations.
-- **ShoppingCartSteps.java**: Step definitions for shopping cart actions and validations.
+This folder contains step definition classes corresponding to the **Gherkin** steps defined in the feature files.
+
+- **HomeSteps.java**: Step definitions for actions related to the home page.
+- **RegisterSteps.java**: Step definitions for the registration process.
+- **SearchSteps.java**: Step definitions for search functionalities.
+- **ShoppingCartSteps.java**: Step definitions for shopping cart management.
 
 ### Driver
-Contains the WebDriver manager for initializing and managing the WebDriver instance.
+
+Contains the WebDriver manager class responsible for initializing and managing the WebDriver instance. **WebDriverManager** simplifies browser driver management by automatically downloading and configuring the necessary binaries.
 
 ## Features
 
@@ -111,74 +118,55 @@ Contains the WebDriver manager for initializing and managing the WebDriver insta
 ### Shopping Cart Page
 - Manage products in the cart
 - Validate cart contents and empty state
-# Steps
 
-## HomeSteps.java
+## Step Definitions
+
+Here are a few examples of step definitions used in the project:
+
+### HomeSteps.java
+
 - **@Given("I am a user on Mega Image home page")**: Opens the home page.
 - **@Then("I validate cookie header and click accept cookie button")**: Validates and accepts cookies.
-- **@When("I click on 'Contul meu' button")**: Clicks the 'Contul Meu' button.
-- **@When("I click on basket picture button with index: (.*)$")**: Adds a product to the basket by index.
-- **@When("I click on 'Alege mai tarziu' button")**: Clicks 'Alege Mai Tarziu'.
-- **@When("I click on x button in 'Completeaza-ti cosul cu aceste produse' pop-up")**: Closes the basket pop-up.
-- **@When("I click 'Shopping Cart' button")**: Clicks the shopping cart button.
+- **@When("I click on 'Contul meu' button")**: Clicks the 'Contul Meu' button to log in.
 
-## RegisterSteps.java
-- **@When("I click twice on 'Continua' button")**: Clicks the continue button twice.
-- **@When("I click three times on 'Continua' button")**: Clicks the continue button three times.
-- **@When("I click on 'Continua' button")**: Clicks the continue button once.
-- **@Then("I validate error message: (.*)$")**: Validates error messages.
-- **@When("I fill email/phone input: (.*)$")**: Fills email/phone input.
-- **@When("I fill password input: (.*)$")**: Fills password input.
-- **@When("I click on 'Creeaza un cont nou' pop up button")**: Clicks the create account button.
-- **@When("I validate register header is displayed")**: Validates the registration header.
-- **@When("I click on 'Creeaza un cont nou' button")**: Clicks 'Creeaza un cont nou'.
-- **@Then("I validate error messages for password and terms checkbox")**: Validates error messages for password and terms checkbox.
-- **@Then("I validate password conditions error message: (.*)$")**: Validates password conditions error message.
+### RegisterSteps.java
 
-## SearchSteps.java
-- **@When("I enter {string} in the search bar")**: Enters text in the search bar.
-- **@When("I press Enter in the search bar")**: Presses Enter in the search bar.
-- **@Then("I validate I am redirected to the search results page for {string}")**: Validates the search results page URL.
-- **@Then("I validate no results are displayed")**: Validates no results message.
-- **@When("I select the first auto-suggestion from the list")**: Selects the first auto-suggestion.
-- **@Then("I validate I am redirected to the product details page for the selected suggestion")**: Validates redirection to the product details page.
-- **@Then("I apply the filter 'branduri proprii'")**: Applies the 'branduri proprii' filter.
-- **@Then("I validate the search results page displays only 'Gusturi romanesti' brand products")**: Validates the presence of 'Gusturi romanesti' brand products.
-- **@Then("I validate the search results page displays products related to 'ciocolata' regardless of case")**: Validates products related to 'ciocolata'.
-- **@When("I press Enter in the search bar without entering any text")**: Presses Enter without text in the search bar.
+- **@When("I fill email/phone input: (.*)$")**: Fills the email/phone input field.
+- **@Then("I validate error message: (.*)$")**: Validates the error message for invalid input.
 
-## ShoppingCartSteps.java
-- **@When("I click on 'Remove product' button")**: Clicks the remove product button.
-- **@Then("I validate empty basket message is displayed")**: Validates the empty basket message.
+### SearchSteps.java
+
+- **@When("I enter {string} in the search bar")**: Enters a search term in the search bar.
+- **@Then("I validate I am redirected to the search results page for {string}")**: Validates the search results.
+
+### ShoppingCartSteps.java
+
 - **@Then("I validate shopping cart url is correct")**: Validates the shopping cart URL.
-- **@Then("I validate the product is added to the cart")**: Validates that the product is added to the cart.
-- **@Then("I validate all products are in the cart")**: Validates all products are in the cart.
-- **@Then("I click twice on increase quantity button")**: Clicks the increase quantity button twice.
-- **@Then("I validate the product quantity is {int}")**: Validates the product quantity.
-- **@When("I click 'Goleste cosul' button")**: Clicks the 'Goleste cosul' button.
-- **@When("I click on confirm empty basket button")**: Clicks the confirm empty basket button.
-# Conclusion
+- **@When("I click on 'Remove product' button")**: Removes a product from the cart.
 
-The Mega Image Automation Testing project demonstrates a robust implementation of automated testing using Selenium WebDriver and Cucumber BDD with Java. The project is structured to cover essential functionalities of the Mega Image website, including home page interactions, user registration, search operations, and shopping cart management.
+## Conclusion
 
-## Key Achievements
+The Mega Image Automation Testing project demonstrates a robust implementation of automated testing using **Selenium WebDriver** and **Cucumber BDD** with Java. The project structure is designed to cover essential functionalities of the Mega Image website, ensuring scalability and ease of maintenance.
 
-- **Behavior-Driven Development (BDD)**: Utilized Cucumber to write clear and concise test scenarios in Gherkin syntax, ensuring that the tests are understandable by non-technical stakeholders.
-- **Page Object Model (POM)**: Implemented the Page Object Model to enhance code maintainability and reusability, making it easier to manage interactions with different pages of the website.
-- **Comprehensive Test Coverage**: Created detailed test cases for various functionalities such as cookie acceptance, product search, user registration, and cart management, providing extensive coverage of the website’s features.
-- **Automated Reporting**: Integrated automated test reporting to visualize test results and identify issues efficiently.
+### Key Achievements
+
+- **Behavior-Driven Development (BDD)**: Leveraged Cucumber and Gherkin syntax to write understandable test scenarios for all stakeholders.
+- **Page Object Model (POM)**: Implemented POM to streamline test development and enhance maintainability.
+- **Comprehensive Test Coverage**: Covered crucial functionalities such as product search, user registration, and shopping cart management.
+- **Automated Reporting**: Integrated reporting to visualize test results and streamline issue identification.
 
 ## Future Work
 
-- **Test Enhancements**: Consider adding more test cases to cover edge cases and additional functionalities of the website.
-- **Performance Testing**: Integrate performance testing to evaluate the responsiveness and stability of the website under different loads.
-- **Continuous Integration**: Implement CI/CD pipelines to automate the execution of tests and deployment processes, ensuring that the latest code changes are thoroughly tested.
+- **Test Enhancements**: Add more test cases for edge scenarios and additional functionalities.
+- **Cross-Browser Testing**: Expand tests to support multiple browsers for greater compatibility.
+- **Performance Testing**: Integrate performance testing tools to evaluate the site's responsiveness under varying loads.
+- **Continuous Integration (CI/CD)**: Implement CI/CD pipelines to automate test execution and deployment processes.
 
 ## Test Reports
 
-Screenshots and detailed reports of the test executions will be added to provide insights into the test results and the overall effectiveness of the test cases. These reports will help in analyzing the test outcomes and identifying areas for improvement.
+Screenshots and detailed test execution reports will be added to provide insights into the effectiveness of the test cases and to assist in identifying areas for improvement.
 
-Thank you for reviewing the Mega Image Automation Testing project. For any further information or queries, please refer to the provided documentation and test reports.
+Thank you for reviewing the Mega Image Automation Testing project. For further queries, refer to the documentation and the provided test reports.
 
 
 
