@@ -180,7 +180,8 @@ The Mega Image Automation Testing project demonstrates a robust implementation o
 
 ## Test Reports
 
-Screenshots and detailed test execution reports will be added to provide insights into the effectiveness of the test cases and to assist in identifying areas for improvement.
+This report outlines the testing conducted on 17 September 2024 and documents all the functionalities that have been thoroughly tested. The report comprises 17 scenarios and 106 steps all of which have successfully passed within a total time of 2 minutes and 58 sec.
+![TestsReport]()
 
 Thank you for reviewing the Mega Image Automation Testing project. For further queries, refer to the documentation and the provided test reports.
 
