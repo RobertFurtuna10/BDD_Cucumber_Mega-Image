@@ -66,10 +66,26 @@ Follow the steps below to set up and run the project:
      ```
 
 6. **Run Tests**:
-   - Execute the tests using Maven:
-     ```bash
-     mvn test
-     ```
+
+To execute the tests, you need to run the specific runner files depending on the test suite you want to execute. Here are the available runners:
+
+1. **Home Page Tests**:
+   - Navigate to `HomePageRunner` and run the test directly.
+
+2. **User Registration Tests**:
+   - Navigate to `RegisterRunner` and run the test directly.
+
+3. **Regression Tests**:
+   - Navigate to `RegressionTestsRunner` and run the test directly.
+
+4. **Search Functionality Tests**:
+   - Navigate to `SearchRunner` and run the test directly.
+
+5. **Shopping Cart Tests**:
+   - Navigate to `ShoppingCartRunner` and run the test directly.
+
+To run a specific test suite, open the runner file in your IDE (e.g., `Visual Studio Code` or `IntelliJ IDEA`) and run the file using the integrated test runner. Each runner corresponds to a different suite of tests for various functionalities of the Mega Image website.
+
 
 This will build the project, install the necessary dependencies, and execute the feature files with the specified WebDriver.
 
