@@ -86,6 +86,40 @@ To execute the tests, you need to run the specific runner files depending on the
 
 To run a specific test suite, open the runner file in your IDE (e.g., `Visual Studio Code` or `IntelliJ IDEA`) and run the file using the integrated test runner. Each runner corresponds to a different suite of tests for various functionalities of the Mega Image website.
 
+### IntelliJ IDEA
+1. **Import Project**:
+   - Open IntelliJ IDEA.
+   - Click on **File** > **Open** and select the `pom.xml` file located in the root directory of the project.
+   - IntelliJ IDEA will automatically detect the Maven project and import it.
+2. **Configure Maven**:
+   - Ensure Maven is configured correctly by going to **File** > **Settings** > **Build, Execution, Deployment** > **Build Tools** > **Maven**.
+   - Make sure the **Maven home directory** is set to the installation directory of Maven, or use the bundled Maven.
+3. **Setup JDK**:
+   - Go to **File** > **Project Structure** > **Project**.
+   - Ensure the **Project SDK** is set to JDK 1.8 or later.
+   - If not, click **New** and locate your JDK installation directory.
+4. **Run Tests**:
+   - Open the desired runner file (e.g., `HomePageRunner`, `RegisterRunner`) from the `src/test/java` directory.
+   - Right-click on the file and select **Run 'HomePageRunner'** (or the respective runner) to execute the tests.
+
+### Visual Studio Code
+1. **Open Project**:
+   - Open Visual Studio Code.
+   - Click on **File** > **Open Folder** and select the project folder containing the `pom.xml` file.
+2. **Install Extensions**:
+   - Install the **Java Extension Pack** from the Extensions view to provide support for Java development.
+   - Install the **Maven for Java** extension to handle Maven tasks.
+3. **Configure Maven**:
+   - Ensure that Maven is configured correctly by running Maven commands from the terminal in VS Code.
+   - Open the terminal via **Terminal** > **New Terminal** and run `mvn install` to ensure all dependencies are downloaded.
+4. **Setup JDK**:
+   - Open the Command Palette with `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS).
+   - Search for and select **Java: Configure Java Runtime**.
+   - Ensure that JDK 1.8 or later is set up.
+5. **Run Tests**:
+   - Open the desired runner file (e.g., `HomePageRunner`, `RegisterRunner`) from the `src/test/java` directory.
+   - Click on the **Run** button that appears above the main method, or right-click on the file and select **Run Java**.
+
 
 This will build the project, install the necessary dependencies, and execute the feature files with the specified WebDriver.
 
