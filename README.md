@@ -53,37 +53,6 @@ Follow the steps below to set up and run the project:
      git clone https://github.com/RobertFurtuna10/BDD_Cucumber_Mega-Image.git
      ```
 
-4. **Navigate to Project Directory**:
-   - Change to the directory where your `pom.xml` file is located:
-     ```bash
-     cd path/to/project-directory
-     ```
-
-5. **Install Dependencies**:
-   - Run Maven to download and install the required dependencies:
-     ```bash
-     mvn install
-     ```
-
-6. **Run Tests**:
-
-To execute the tests, you need to run the specific runner files depending on the test suite you want to execute. Here are the available runners:
-
-1. **Home Page Tests**:
-   - Navigate to `HomePageRunner` and run the test directly.
-
-2. **User Registration Tests**:
-   - Navigate to `RegisterRunner` and run the test directly.
-
-3. **Regression Tests**:
-   - Navigate to `RegressionTestsRunner` and run the test directly.
-
-4. **Search Functionality Tests**:
-   - Navigate to `SearchRunner` and run the test directly.
-
-5. **Shopping Cart Tests**:
-   - Navigate to `ShoppingCartRunner` and run the test directly.
-
 To run a specific test suite, open the runner file in your IDE (e.g., `Visual Studio Code` or `IntelliJ IDEA`) and run the file using the integrated test runner. Each runner corresponds to a different suite of tests for various functionalities of the Mega Image website.
 
 ### IntelliJ IDEA
@@ -122,6 +91,27 @@ To run a specific test suite, open the runner file in your IDE (e.g., `Visual St
 
 
 This will build the project, install the necessary dependencies, and execute the feature files with the specified WebDriver.
+
+6. **Run Tests**:
+
+To execute the tests, you need to run the specific runner files depending on the test suite you want to execute. Here are the available runners:
+
+1. **Home Page Tests**:
+   - Navigate to `HomePageRunner` and run the test directly.
+
+2. **User Registration Tests**:
+   - Navigate to `RegisterRunner` and run the test directly.
+
+3. **Regression Tests**:
+   - Navigate to `RegressionTestsRunner` and run the test directly.
+
+4. **Search Functionality Tests**:
+   - Navigate to `SearchRunner` and run the test directly.
+
+5. **Shopping Cart Tests**:
+   - Navigate to `ShoppingCartRunner` and run the test directly.
+
+
 
 ## Project Structure
 
